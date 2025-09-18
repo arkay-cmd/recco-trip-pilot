@@ -73,6 +73,58 @@ let metrics: Metrics = {
 
 // Helper function to extract intent tags from query
 function extractIntentTags(query: string): string[] {
+  const queryLower = query.toLowerCase();
+  const intentTags: string[] = [];
+  
+  // Emotional state mappings
+  const emotionMap = {
+    // Social/Group feelings
+    'sad': ['family', 'resort', 'cultural'],
+    'lonely': ['family', 'resort', 'city'],
+    'isolated': ['family', 'resort', 'city'],
+    'need friends': ['family', 'resort', 'city'],
+    
+    // Solo/Me time feelings  
+    'me time': ['spa', 'relax', 'nature', 'beach'],
+    'alone time': ['spa', 'relax', 'nature', 'beach'],
+    'solo': ['adventure', 'nature', 'heritage', 'city'],
+    'peace': ['spa', 'relax', 'nature', 'beach'],
+    'quiet': ['spa', 'relax', 'nature'],
+    
+    // Relaxation feelings
+    'chill': ['beach', 'resort', 'spa', 'relax'],
+    'relax': ['beach', 'resort', 'spa', 'relax'],
+    'tired': ['spa', 'resort', 'relax'],
+    'stressed': ['spa', 'beach', 'relax', 'nature'],
+    'overwhelmed': ['spa', 'beach', 'relax', 'nature'],
+    
+    // Adventure/Energy feelings
+    'adventurous': ['adventure', 'nature', 'mountains'],
+    'excited': ['adventure', 'city', 'cultural'],
+    'energetic': ['adventure', 'city', 'shopping'],
+    'bored': ['adventure', 'cultural', 'city'],
+    'restless': ['adventure', 'nature', 'city'],
+    
+    // Romantic feelings
+    'romantic': ['luxury', 'resort', 'beach'],
+    'love': ['luxury', 'resort', 'beach'],
+    'honeymoon': ['luxury', 'resort', 'beach'],
+    
+    // Cultural/Learning feelings
+    'curious': ['cultural', 'heritage', 'city'],
+    'learn': ['cultural', 'heritage', 'city'],
+    'explore': ['cultural', 'adventure', 'city'],
+    'discover': ['cultural', 'heritage', 'nature']
+  };
+  
+  // Check for emotion-based tags
+  for (const [emotion, tags] of Object.entries(emotionMap)) {
+    if (queryLower.includes(emotion)) {
+      intentTags.push(...tags);
+    }
+  }
+  
+  // Existing location/activity tags
   const knownTags = [
     'beach', 'city', 'business', 'leisure', 'family', 'luxury', 'budget',
     'resort', 'hotel', 'flight', 'package', 'tropical', 'cultural', 'heritage',
@@ -81,8 +133,11 @@ function extractIntentTags(query: string): string[] {
     'international', 'economy', 'premium', 'business-class'
   ];
   
-  const queryLower = query.toLowerCase();
-  return knownTags.filter(tag => queryLower.includes(tag));
+  // Add direct tag matches
+  intentTags.push(...knownTags.filter(tag => queryLower.includes(tag)));
+  
+  // Remove duplicates
+  return [...new Set(intentTags)];
 }
 
 // Recommendation scoring algorithm

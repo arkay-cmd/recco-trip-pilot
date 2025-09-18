@@ -8,7 +8,7 @@ interface SearchBarProps {
   placeholder?: string;
 }
 
-export function SearchBar({ onSearch, placeholder = "Where would you like to go? (e.g., 'beach family Goa')" }: SearchBarProps) {
+export function SearchBar({ onSearch, placeholder = "How are you feeling, traveller? (e.g., 'need some me time', 'feeling adventurous', 'want to chill')" }: SearchBarProps) {
   const [query, setQuery] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
