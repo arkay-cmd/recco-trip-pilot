@@ -2,39 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Travel-themed design system. All colors, gradients, fonts, etc defined here. 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 20% 98%;
+    --foreground: 220 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 85% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 25% 95%;
+    --secondary-foreground: 220 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 25 85% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 88%;
+    --input: 220 15% 92%;
+    --ring: 210 85% 55%;
+
+    /* Travel-themed colors */
+    --ocean: 210 85% 55%;
+    --ocean-light: 210 75% 65%;
+    --ocean-dark: 210 90% 45%;
+    --sunset: 25 85% 60%;
+    --sunset-light: 25 75% 70%;
+    --sunset-dark: 25 90% 50%;
+    --sky: 200 80% 85%;
+    --sand: 40 40% 90%;
+
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--ocean)), hsl(var(--ocean-light)));
+    --gradient-sunset: linear-gradient(135deg, hsl(var(--sunset)), hsl(var(--sunset-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--ocean)) 0%, hsl(var(--sunset)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 15% 98%));
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(var(--ocean) / 0.1);
+    --shadow-hover: 0 8px 30px -4px hsl(var(--ocean) / 0.15);
+    --shadow-button: 0 4px 15px -3px hsl(var(--ocean) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --radius: 0.5rem;
 

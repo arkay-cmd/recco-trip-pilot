@@ -1,0 +1,82 @@
+[
+  {
+    "id": "hotel_1",
+    "title": "Taj Exotica Resort & Spa, Goa",
+    "tags": ["beach", "luxury", "resort", "spa", "family", "tropical"],
+    "price": 15000,
+    "rating": 4.7,
+    "imageUrl": "/api/placeholder/300/200",
+    "trending": true,
+    "details": {
+      "location": "Benaulim Beach, South Goa",
+      "amenities": ["Private Beach", "Spa", "Pool", "Kids Club"],
+      "roomType": "Deluxe Ocean View"
+    }
+  },
+  {
+    "id": "hotel_2",
+    "title": "The Oberoi Dubai",
+    "tags": ["luxury", "business", "city", "downtown", "convenient"],
+    "price": 28000,
+    "rating": 4.9,
+    "imageUrl": "/api/placeholder/300/200",
+    "details": {
+      "location": "Business Bay, Dubai",
+      "amenities": ["Business Center", "Spa", "Fine Dining", "Concierge"],
+      "roomType": "Premier City View"
+    }
+  },
+  {
+    "id": "hotel_3", 
+    "title": "Marina Bay Sands, Singapore",
+    "tags": ["luxury", "business", "city", "iconic", "rooftop", "casino"],
+    "price": 22000,
+    "rating": 4.8,
+    "imageUrl": "/api/placeholder/300/200",
+    "trending": true,
+    "details": {
+      "location": "Marina Bay, Singapore",
+      "amenities": ["Infinity Pool", "Casino", "Shopping", "SkyPark"],
+      "roomType": "Deluxe Marina View"
+    }
+  },
+  {
+    "id": "hotel_4",
+    "title": "Kumarakom Lake Resort, Kerala",
+    "tags": ["backwaters", "nature", "heritage", "peaceful", "boat", "ayurveda"],
+    "price": 8500,
+    "rating": 4.5,
+    "imageUrl": "/api/placeholder/300/200",
+    "details": {
+      "location": "Kumarakom, Kerala",
+      "amenities": ["Lake View", "Ayurveda Spa", "Traditional Boats", "Heritage Villa"],
+      "roomType": "Heritage Pool Villa"
+    }
+  },
+  {
+    "id": "hotel_5",
+    "title": "The Langham, London",
+    "tags": ["luxury", "business", "city", "heritage", "convenient", "europe"],
+    "price": 35000,
+    "rating": 4.6,
+    "imageUrl": "/api/placeholder/300/200", 
+    "details": {
+      "location": "Regent Street, London",
+      "amenities": ["Business Lounge", "Spa", "Fine Dining", "Concierge"],
+      "roomType": "Premium Room"
+    }
+  },
+  {
+    "id": "hotel_6",
+    "title": "Chatrium Hotel Riverside Bangkok",
+    "tags": ["river", "city", "budget", "temple", "boat", "cultural"],
+    "price": 6500,
+    "rating": 4.3,
+    "imageUrl": "/api/placeholder/300/200",
+    "details": {
+      "location": "Chao Phraya River, Bangkok", 
+      "amenities": ["River View", "Free Shuttle Boat", "Pool", "Fitness Center"],
+      "roomType": "Superior River View"
+    }
+  }
+]

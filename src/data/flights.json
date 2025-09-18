@@ -1,0 +1,94 @@
+[
+  {
+    "id": "flight_1",
+    "title": "Mumbai to Goa - IndiGo",
+    "tags": ["domestic", "economy", "beach", "short-haul"],
+    "price": 4500,
+    "rating": 4.2,
+    "imageUrl": "/api/placeholder/300/200",
+    "trending": true,
+    "details": {
+      "airline": "IndiGo",
+      "duration": "1h 25m",
+      "departure": "08:30",
+      "arrival": "09:55",
+      "route": "BOM → GOI"
+    }
+  },
+  {
+    "id": "flight_2", 
+    "title": "Delhi to Dubai - Emirates",
+    "tags": ["international", "business-class", "luxury", "middle-east"],
+    "price": 25000,
+    "rating": 4.8,
+    "imageUrl": "/api/placeholder/300/200",
+    "details": {
+      "airline": "Emirates",
+      "duration": "3h 35m",
+      "departure": "14:20",
+      "arrival": "17:55",
+      "route": "DEL → DXB"
+    }
+  },
+  {
+    "id": "flight_3",
+    "title": "Bangalore to Singapore - Singapore Airlines", 
+    "tags": ["international", "premium-economy", "business", "asia"],
+    "price": 18000,
+    "rating": 4.6,
+    "imageUrl": "/api/placeholder/300/200",
+    "trending": true,
+    "details": {
+      "airline": "Singapore Airlines",
+      "duration": "4h 15m", 
+      "departure": "11:45",
+      "arrival": "18:30",
+      "route": "BLR → SIN"
+    }
+  },
+  {
+    "id": "flight_4",
+    "title": "Chennai to Kochi - Air India",
+    "tags": ["domestic", "economy", "south-india", "backwaters"],
+    "price": 3200,
+    "rating": 3.9,
+    "imageUrl": "/api/placeholder/300/200",
+    "details": {
+      "airline": "Air India",
+      "duration": "1h 10m",
+      "departure": "16:15",
+      "arrival": "17:25", 
+      "route": "MAA → COK"
+    }
+  },
+  {
+    "id": "flight_5",
+    "title": "Mumbai to London - British Airways",
+    "tags": ["international", "business-class", "europe", "luxury", "long-haul"],
+    "price": 55000,
+    "rating": 4.4,
+    "imageUrl": "/api/placeholder/300/200",
+    "details": {
+      "airline": "British Airways",
+      "duration": "9h 30m",
+      "departure": "02:15",
+      "arrival": "07:45",
+      "route": "BOM → LHR"
+    }
+  },
+  {
+    "id": "flight_6",
+    "title": "Kolkata to Bangkok - Thai Airways",
+    "tags": ["international", "economy", "asia", "budget", "temple"],
+    "price": 12000,
+    "rating": 4.1,
+    "imageUrl": "/api/placeholder/300/200",
+    "details": {
+      "airline": "Thai Airways", 
+      "duration": "2h 45m",
+      "departure": "09:20",
+      "arrival": "13:35",
+      "route": "CCU → BKK"
+    }
+  }
+]

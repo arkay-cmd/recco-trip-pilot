@@ -1,0 +1,82 @@
+[
+  {
+    "id": "package_1",
+    "title": "Goa Beach Paradise - 5 Days",
+    "tags": ["beach", "family", "resort", "relax", "tropical", "all-inclusive"],
+    "price": 25000,
+    "rating": 4.6,
+    "imageUrl": "/api/placeholder/300/200",
+    "trending": true,
+    "details": {
+      "duration": "5 Days, 4 Nights",
+      "includes": ["Flights", "Beach Resort", "Meals", "Airport Transfers"],
+      "highlights": ["Private Beach Access", "Water Sports", "Sunset Cruise"]
+    }
+  },
+  {
+    "id": "package_2",
+    "title": "Dubai Business Express - 3 Days", 
+    "tags": ["business", "city", "luxury", "convenient", "conference", "downtown"],
+    "price": 45000,
+    "rating": 4.8,
+    "imageUrl": "/api/placeholder/300/200",
+    "details": {
+      "duration": "3 Days, 2 Nights",
+      "includes": ["Business Class Flights", "5-Star Hotel", "Airport Transfers", "Business Lounge"],
+      "highlights": ["Downtown Location", "Meeting Rooms", "Concierge Service"]
+    }
+  },
+  {
+    "id": "package_3",
+    "title": "Singapore Stopover Deluxe",
+    "tags": ["business", "city", "stopover", "shopping", "food", "asia"],
+    "price": 18000,
+    "rating": 4.7,
+    "imageUrl": "/api/placeholder/300/200",
+    "details": {
+      "duration": "2 Days, 1 Night",
+      "includes": ["Hotel", "City Tour", "Airport Transfers", "Breakfast"],
+      "highlights": ["Marina Bay Tour", "Shopping Districts", "Local Cuisine"]
+    }
+  },
+  {
+    "id": "package_4",
+    "title": "Kerala Backwaters Experience - 7 Days",
+    "tags": ["backwaters", "nature", "heritage", "boat", "peaceful", "cultural"],
+    "price": 32000,
+    "rating": 4.5,
+    "imageUrl": "/api/placeholder/300/200",
+    "trending": true,
+    "details": {
+      "duration": "7 Days, 6 Nights",
+      "includes": ["Flights", "Houseboat", "Heritage Hotels", "All Meals", "Transfers"],
+      "highlights": ["2-Night Houseboat", "Ayurveda Treatments", "Spice Plantation Tour"]
+    }
+  },
+  {
+    "id": "package_5",
+    "title": "London Business Week",
+    "tags": ["business", "city", "europe", "luxury", "conference", "heritage"],
+    "price": 85000,
+    "rating": 4.4,
+    "imageUrl": "/api/placeholder/300/200",
+    "details": {
+      "duration": "7 Days, 6 Nights", 
+      "includes": ["Business Class Flights", "Luxury Hotel", "Business Lounge", "Transfers"],
+      "highlights": ["Central London Location", "Business Facilities", "Cultural Tours"]
+    }
+  },
+  {
+    "id": "package_6",
+    "title": "Bangkok Temple & Culture Tour - 4 Days",
+    "tags": ["cultural", "temple", "budget", "food", "asia", "adventure"],
+    "price": 16000,
+    "rating": 4.2,
+    "imageUrl": "/api/placeholder/300/200",
+    "details": {
+      "duration": "4 Days, 3 Nights",
+      "includes": ["Flights", "Hotel", "Guided Tours", "Some Meals", "Transfers"],
+      "highlights": ["Temple Tours", "Street Food Experience", "Floating Market Visit"]
+    }
+  }
+]

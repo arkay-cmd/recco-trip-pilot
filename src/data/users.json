@@ -1,0 +1,59 @@
+[
+  {
+    "id": "new_user",
+    "name": "New Traveler",
+    "preferences": {
+      "purpose": null,
+      "budgetLevel": "mid",
+      "preferredTags": []
+    },
+    "history": []
+  },
+  {
+    "id": "leisure_user",
+    "name": "Sarah Johnson",
+    "preferences": {
+      "purpose": "leisure",
+      "budgetLevel": "mid",
+      "preferredTags": ["beach", "relax", "family", "resort", "tropical"]
+    },
+    "history": [
+      {
+        "type": "hotel",
+        "tags": ["beach", "family", "resort"],
+        "price": 1200
+      },
+      {
+        "type": "flight",
+        "tags": ["domestic", "economy"],
+        "price": 450
+      }
+    ]
+  },
+  {
+    "id": "biz_user",
+    "name": "Michael Chen",
+    "preferences": {
+      "purpose": "business",
+      "budgetLevel": "high",
+      "preferredTags": ["city", "business", "luxury", "convenient", "downtown"]
+    },
+    "history": [
+      {
+        "type": "hotel",
+        "tags": ["business", "city", "luxury"],
+        "price": 2500
+      },
+      {
+        "type": "flight",
+        "tags": ["business-class", "international"],
+        "price": 3200
+      },
+      {
+        "type": "package",
+        "tags": ["business", "conference", "city"],
+        "price": 1800
+      }
+    ]
+  }
+]
