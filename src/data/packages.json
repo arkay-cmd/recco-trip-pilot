@@ -5,7 +5,7 @@
     "tags": ["beach", "family", "resort", "relax", "tropical", "all-inclusive"],
     "price": 25000,
     "rating": 4.6,
-    "imageUrl": "/api/placeholder/300/200",
+    "imageUrl": "/generated/goa-beach.webp",
     "trending": true,
     "details": {
       "duration": "5 Days, 4 Nights",
@@ -15,28 +15,29 @@
   },
   {
     "id": "package_2",
-    "title": "Dubai Business Express - 3 Days", 
-    "tags": ["business", "city", "luxury", "convenient", "conference", "downtown"],
-    "price": 45000,
-    "rating": 4.8,
-    "imageUrl": "/api/placeholder/300/200",
+    "title": "Rishikesh River Rafting & Bungee Jumping - 3 Days", 
+    "tags": ["adventure", "nature", "river", "adrenaline", "budget", "extreme"],
+    "price": 12000,
+    "rating": 4.6,
+    "imageUrl": "/generated/rishikesh-rafting.webp",
+    "trending": true,
     "details": {
       "duration": "3 Days, 2 Nights",
-      "includes": ["Business Class Flights", "5-Star Hotel", "Airport Transfers", "Business Lounge"],
-      "highlights": ["Downtown Location", "Meeting Rooms", "Concierge Service"]
+      "includes": ["River rafting", "Bungee jumping", "Camping", "Adventure gear", "All meals"],
+      "highlights": ["Ganges river rafting", "India's highest bungee jump", "Lakshman Jhula", "Evening aarti"]
     }
   },
   {
     "id": "package_3",
-    "title": "Singapore Stopover Deluxe",
-    "tags": ["business", "city", "stopover", "shopping", "food", "asia"],
-    "price": 18000,
-    "rating": 4.7,
-    "imageUrl": "/api/placeholder/300/200",
+    "title": "Ladakh High Altitude Adventure - 8 Days",
+    "tags": ["adventure", "mountains", "nature", "trek", "unique", "high-altitude"],
+    "price": 32000,
+    "rating": 4.8,
+    "imageUrl": "/generated/ladakh-adventure.webp",
     "details": {
-      "duration": "2 Days, 1 Night",
-      "includes": ["Hotel", "City Tour", "Airport Transfers", "Breakfast"],
-      "highlights": ["Marina Bay Tour", "Shopping Districts", "Local Cuisine"]
+      "duration": "8 Days, 7 Nights",
+      "includes": ["Mountain biking", "High altitude trekking", "Monastery visits", "Local guide"],
+      "highlights": ["Pangong Lake", "Nubra Valley", "Khardung La pass", "Leh palace"]
     }
   },
   {
@@ -45,7 +46,7 @@
     "tags": ["backwaters", "nature", "heritage", "boat", "peaceful", "cultural"],
     "price": 32000,
     "rating": 4.5,
-    "imageUrl": "/api/placeholder/300/200",
+    "imageUrl": "/generated/kerala-backwaters.webp",
     "trending": true,
     "details": {
       "duration": "7 Days, 6 Nights",
@@ -55,28 +56,107 @@
   },
   {
     "id": "package_5",
-    "title": "London Business Week",
-    "tags": ["business", "city", "europe", "luxury", "conference", "heritage"],
-    "price": 85000,
+    "title": "Goa Skydiving & Water Sports - 4 Days",
+    "tags": ["adventure", "beach", "adrenaline", "water-sports", "extreme", "skydiving"],
+    "price": 22000,
     "rating": 4.4,
-    "imageUrl": "/api/placeholder/300/200",
+    "imageUrl": "/generated/goa-skydiving.webp",
     "details": {
-      "duration": "7 Days, 6 Nights", 
-      "includes": ["Business Class Flights", "Luxury Hotel", "Business Lounge", "Transfers"],
-      "highlights": ["Central London Location", "Business Facilities", "Cultural Tours"]
+      "duration": "4 Days, 3 Nights", 
+      "includes": ["Tandem skydiving", "Jet skiing", "Parasailing", "Scuba diving", "Beach resort"],
+      "highlights": ["15,000ft skydive", "Grande Island scuba", "Baga beach activities", "Sunset paragliding"]
     }
   },
   {
     "id": "package_6",
-    "title": "Bangkok Temple & Culture Tour - 4 Days",
-    "tags": ["cultural", "temple", "budget", "food", "asia", "adventure"],
+    "title": "Manali Paragliding & Snow Adventure - 5 Days",
+    "tags": ["adventure", "mountains", "snow", "paragliding", "nature", "winter"],
+    "price": 19000,
+    "rating": 4.5,
+    "imageUrl": "/generated/manali-paragliding.webp",
+    "details": {
+      "duration": "5 Days, 4 Nights",
+      "includes": ["Paragliding sessions", "Snow activities", "Mountain resort", "Adventure guide"],
+      "highlights": ["Solang Valley paragliding", "Rohtang Pass", "Snow point activities", "Apple orchards"]
+    }
+  },
+  {
+    "id": "package_7",
+    "title": "Himachal Adventure Trek - 6 Days",
+    "tags": ["adventure", "nature", "mountains", "trek", "budget", "hiking"],
+    "price": 18000,
+    "rating": 4.5,
+    "imageUrl": "/generated/himachal-trek.webp",
+    "details": {
+      "duration": "6 Days, 5 Nights",
+      "includes": ["Trekking guide", "Camping equipment", "All meals", "Transport"],
+      "highlights": ["Triund trek", "Dharamshala", "McLeod Ganj", "Mountain views"]
+    }
+  },
+  {
+    "id": "package_8",
+    "title": "Coorg Coffee & Nature Trek - 4 Days",
+    "tags": ["nature", "trek", "relax", "coffee", "family", "plantation"],
     "price": 16000,
-    "rating": 4.2,
-    "imageUrl": "/api/placeholder/300/200",
+    "rating": 4.6,
+    "imageUrl": "/generated/coorg-coffee.webp",
     "details": {
       "duration": "4 Days, 3 Nights",
-      "includes": ["Flights", "Hotel", "Guided Tours", "Some Meals", "Transfers"],
-      "highlights": ["Temple Tours", "Street Food Experience", "Floating Market Visit"]
+      "includes": ["Coffee plantation tours", "Nature treks", "Homestay", "Local cuisine"],
+      "highlights": ["Abbey Falls", "Dubare elephant camp", "Coffee tasting", "Madikeri fort"]
+    }
+  },
+  {
+    "id": "package_9",
+    "title": "Andaman Scuba Diving Adventure - 6 Days",
+    "tags": ["beach", "scuba", "adventure", "tropical", "unique", "underwater"],
+    "price": 35000,
+    "rating": 4.7,
+    "imageUrl": "/generated/andaman-scuba.webp",
+    "details": {
+      "duration": "6 Days, 5 Nights",
+      "includes": ["Certified scuba diving", "Island hopping", "Beach resort", "Underwater photography"],
+      "highlights": ["Havelock Island", "Neil Island", "Radhanagar Beach", "Coral reefs exploration"]
+    }
+  },
+  {
+    "id": "package_10",
+    "title": "Spiti Valley Desert Mountain Safari - 7 Days",
+    "tags": ["adventure", "mountains", "desert", "unique", "nature", "monastery"],
+    "price": 28000,
+    "rating": 4.5,
+    "imageUrl": "/generated/spiti-valley.webp",
+    "details": {
+      "duration": "7 Days, 6 Nights",
+      "includes": ["Desert safari", "Monastery visits", "Local homestays", "Mountain guide"],
+      "highlights": ["Key Monastery", "Chandratal Lake", "Kaza town", "Fossil village"]
+    }
+  },
+  {
+    "id": "package_11",
+    "title": "Rajasthan Royal Heritage Tour - 8 Days",
+    "tags": ["heritage", "cultural", "luxury", "family", "city", "royal"],
+    "price": 45000,
+    "rating": 4.7,
+    "imageUrl": "/generated/rajasthan-palace.webp",
+    "details": {
+      "duration": "8 Days, 7 Nights", 
+      "includes": ["Palace hotels", "Camel safari", "Folk performances", "Heritage walks"],
+      "highlights": ["Jaipur palaces", "Udaipur lakes", "Jodhpur fort", "Desert camp"]
+    }
+  },
+  {
+    "id": "package_12",
+    "title": "Bali Tropical Retreat - 6 Days",
+    "tags": ["beach", "spa", "tropical", "luxury", "relax", "international"],
+    "price": 40000,
+    "rating": 4.9,
+    "imageUrl": "/generated/bali-retreat.webp",
+    "trending": true,
+    "details": {
+      "duration": "6 Days, 5 Nights",
+      "includes": ["Beach villa", "Spa treatments", "Temple tours", "Cooking class"],
+      "highlights": ["Ubud rice terraces", "Tanah Lot temple", "Seminyak beach"]
     }
   }
 ]

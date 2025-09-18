@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button";
 import { SearchBar } from "@/components/SearchBar";
 import { ContextCard } from "@/components/ContextCard";
 import { RecommendationCard } from "@/components/RecommendationCard";
+import { InteractiveCarousel } from "@/components/InteractiveCarousel";
 import { ItemModal } from "@/components/ItemModal";
 import { Dashboard } from "@/components/Dashboard";
 import { AdminPanel } from "@/components/AdminPanel";
 import { Header } from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { Plane, Hotel, Package, Sparkles, TrendingUp, MapPin } from "lucide-react";
+import { Plane, Hotel, Package, Sparkles, TrendingUp, MapPin, Zap, Mountain, Waves } from "lucide-react";
 import { 
   mockApi, 
   User, 
@@ -217,6 +218,101 @@ const Index = () => {
     });
   };
 
+  // Helper function to get dynamic section title and subtitle
+  const getDynamicSectionInfo = () => {
+    if (!recommendations) return { title: "Personalized Recommendations", subtitle: "Discover your perfect trip" };
+
+    const totalResults = recommendations.flights.length + recommendations.hotels.length + recommendations.packages.length;
+    
+    if (searchQuery) {
+      // Dynamic titles based on search query emotion/intent
+      const query = searchQuery.toLowerCase();
+      
+      if (query.includes('adventure') || query.includes('adrenaline') || query.includes('extreme')) {
+        return {
+          title: "🎯 Adventure Awaits",
+          subtitle: `${totalResults} thrilling experiences found for adventurous souls like you`
+        };
+      }
+      
+      if (query.includes('relax') || query.includes('chill') || query.includes('spa') || query.includes('me time')) {
+        return {
+          title: "🧘‍♀️ Perfect for Relaxation",
+          subtitle: `${totalResults} peaceful retreats to help you unwind`
+        };
+      }
+      
+      if (query.includes('sad') || query.includes('lonely') || query.includes('friends')) {
+        return {
+          title: "👥 Connect & Explore Together",
+          subtitle: `${totalResults} social experiences to lift your spirits`
+        };
+      }
+      
+      if (query.includes('romantic') || query.includes('love') || query.includes('honeymoon')) {
+        return {
+          title: "💕 Romantic Escapes",
+          subtitle: `${totalResults} intimate getaways for you and your loved one`
+        };
+      }
+      
+      if (query.includes('family') || query.includes('kids') || query.includes('children')) {
+        return {
+          title: "👨‍👩‍👧‍👦 Family Adventures",
+          subtitle: `${totalResults} family-friendly experiences for lasting memories`
+        };
+      }
+      
+      // Default for search
+      return {
+        title: "🔍 Results for Your Journey",
+        subtitle: `${totalResults} personalized recommendations based on "${searchQuery}"`
+      };
+    }
+    
+    // Context-based titles
+    if (context.purpose === 'business') {
+      return {
+        title: "💼 Business Travel Solutions",
+        subtitle: `${totalResults} efficient options for your business needs`
+      };
+    }
+    
+    if (context.selectedTags?.includes('adventure')) {
+      return {
+        title: "🏔️ Adventure Collection",
+        subtitle: `${totalResults} exciting adventures matching your thrill-seeking spirit`
+      };
+    }
+    
+    if (context.selectedTags?.includes('beach')) {
+      return {
+        title: "🏖️ Beach Paradise",
+        subtitle: `${totalResults} coastal getaways for your beach dreams`
+      };
+    }
+    
+    if (context.selectedTags?.includes('cultural')) {
+      return {
+        title: "🏛️ Cultural Journeys",
+        subtitle: `${totalResults} enriching cultural experiences`
+      };
+    }
+    
+    // Default based on user type
+    if (currentUser?.preferences.preferredTags.length === 0) {
+      return {
+        title: "✨ Curated Just for You",
+        subtitle: `${totalResults} popular destinations to start your travel journey`
+      };
+    }
+    
+    return {
+      title: "🎯 Personalized Recommendations",
+      subtitle: `${totalResults} handpicked options based on your preferences`
+    };
+  };
+
   // Loading state
   if (!currentUser || !users.length) {
     return (
@@ -293,21 +389,31 @@ const Index = () => {
               }}
             />
 
-            {/* Recommendations */}
+            {/* Recommendations with Interactive Carousel */}
             {recommendations && (
-              <div className="space-y-8">
-                <div className="text-center">
-                  <h2 className="text-3xl font-bold text-foreground mb-2">
-                    Personalized Recommendations
-                  </h2>
-                  <p className="text-muted-foreground">
-                    {searchQuery 
-                      ? `Results for "${searchQuery}" tailored to your preferences`
-                      : `Curated selections based on your profile`}
-                  </p>
-                </div>
+              <div className="space-y-12">
+                {/* Dynamic Header */}
+                {(() => {
+                  const { title, subtitle } = getDynamicSectionInfo();
+                  return (
+                    <div className="text-center space-y-2">
+                      <h2 className="text-3xl font-bold text-foreground">{title}</h2>
+                      <p className="text-muted-foreground">{subtitle}</p>
+                    </div>
+                  );
+                })()}
 
-                {/* Recommendation Sections */}
+                {/* Main Featured Carousel - Show top packages */}
+                {recommendations.packages.length > 0 && (
+                  <InteractiveCarousel
+                    items={recommendations.packages}
+                    onItemClick={handleViewItem}
+                    title="🌟 Featured Experiences"
+                    subtitle="Top recommendations tailored for you"
+                  />
+                )}
+
+                {/* Recommendation Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                   {/* Flights */}
                   <div className="space-y-4">
@@ -315,6 +421,9 @@ const Index = () => {
                       <Plane className="h-6 w-6 text-primary" />
                       <h3 className="text-2xl font-bold">Flights</h3>
                       <Badge variant="secondary">{recommendations.flights.length}</Badge>
+                      {recommendations.flights.some(f => f.score > 8) && (
+                        <Zap className="h-4 w-4 text-yellow-500" />
+                      )}
                     </div>
                     <div className="space-y-4">
                       {recommendations.flights.map((flight) => (
@@ -328,7 +437,8 @@ const Index = () => {
                       {recommendations.flights.length === 0 && (
                         <div className="text-center py-8 text-muted-foreground">
                           <Plane className="h-12 w-12 mx-auto mb-2 opacity-50" />
-                          <p>No flights match your preferences</p>
+                          <p>No flights match your current preferences</p>
+                          <p className="text-sm">Try adjusting your search or budget</p>
                         </div>
                       )}
                     </div>
@@ -340,6 +450,9 @@ const Index = () => {
                       <Hotel className="h-6 w-6 text-primary" />
                       <h3 className="text-2xl font-bold">Hotels</h3>
                       <Badge variant="secondary">{recommendations.hotels.length}</Badge>
+                      {recommendations.hotels.some(h => h.reasons.includes('Highly rated')) && (
+                        <Badge className="bg-yellow-100 text-yellow-800 text-xs">⭐ Top Rated</Badge>
+                      )}
                     </div>
                     <div className="space-y-4">
                       {recommendations.hotels.map((hotel) => (
@@ -353,21 +466,38 @@ const Index = () => {
                       {recommendations.hotels.length === 0 && (
                         <div className="text-center py-8 text-muted-foreground">
                           <Hotel className="h-12 w-12 mx-auto mb-2 opacity-50" />
-                          <p>No hotels match your preferences</p>
+                          <p>No hotels match your current preferences</p>
+                          <p className="text-sm">Try a different destination or budget range</p>
                         </div>
                       )}
                     </div>
                   </div>
 
-                  {/* Packages */}
+                  {/* Adventure Packages */}
                   <div className="space-y-4">
                     <div className="flex items-center gap-2 mb-4">
-                      <Package className="h-6 w-6 text-primary" />
-                      <h3 className="text-2xl font-bold">Packages</h3>
+                      {searchQuery.toLowerCase().includes('adventure') || 
+                       context.selectedTags?.includes('adventure') ? (
+                        <Mountain className="h-6 w-6 text-primary" />
+                      ) : searchQuery.toLowerCase().includes('beach') || 
+                           context.selectedTags?.includes('beach') ? (
+                        <Waves className="h-6 w-6 text-primary" />
+                      ) : (
+                        <Package className="h-6 w-6 text-primary" />
+                      )}
+                      <h3 className="text-2xl font-bold">
+                        {searchQuery.toLowerCase().includes('adventure') || 
+                         context.selectedTags?.includes('adventure') ? 'Adventures' :
+                         searchQuery.toLowerCase().includes('beach') || 
+                         context.selectedTags?.includes('beach') ? 'Beach Escapes' : 'Packages'}
+                      </h3>
                       <Badge variant="secondary">{recommendations.packages.length}</Badge>
+                      {recommendations.packages.some(p => p.trending) && (
+                        <Badge className="bg-gradient-sunset text-white text-xs">🔥 Hot</Badge>
+                      )}
                     </div>
                     <div className="space-y-4">
-                      {recommendations.packages.map((pkg) => (
+                      {recommendations.packages.slice(1).map((pkg) => (
                         <RecommendationCard
                           key={pkg.id}
                           item={pkg}
@@ -375,22 +505,39 @@ const Index = () => {
                           onBook={handleBookItem}
                         />
                       ))}
-                      {recommendations.packages.length === 0 && (
+                      {recommendations.packages.length <= 1 && (
                         <div className="text-center py-8 text-muted-foreground">
                           <Package className="h-12 w-12 mx-auto mb-2 opacity-50" />
-                          <p>No packages match your preferences</p>
+                          <p>More packages coming soon!</p>
+                          <p className="text-sm">Check back later for more options</p>
                         </div>
                       )}
                     </div>
                   </div>
                 </div>
 
+                {/* Quick Stats */}
+                {recommendations && (
+                  <div className="flex justify-center">
+                    <div className="flex gap-6 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <TrendingUp className="h-4 w-4" />
+                        <span>{recommendations.packages.filter(p => p.trending).length} trending</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Sparkles className="h-4 w-4" />
+                        <span>{[...recommendations.flights, ...recommendations.hotels, ...recommendations.packages].filter(i => i.score > 8).length} perfect matches</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Loading Overlay */}
                 {isLoading && (
                   <div className="fixed inset-0 bg-black/20 flex items-center justify-center z-50">
                     <div className="bg-white rounded-lg p-6 shadow-lg">
                       <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-                      <p className="text-sm text-muted-foreground">Updating recommendations...</p>
+                      <p className="text-sm text-muted-foreground">Finding your perfect trip...</p>
                     </div>
                   </div>
                 )}
